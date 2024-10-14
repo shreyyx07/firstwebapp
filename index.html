@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dark Themed Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@100;200;300;400&display=swap" rel="stylesheet"> <!-- Satoshi with variable weights -->
+    <style>
+        body {
+            background-color: #111111; /* Dark background */
+            margin: 0;
+            padding: 0;
+            font-family: 'Satoshi', sans-serif; /* Satoshi Regular font */
+        }
+        nav {
+            background-color: #111111; /* Same color as the background for invisibility */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5vw 5vw; /* Padding as percentage of viewport width */
+        }
+        .logo {
+            color: #f0f0f0; /* Light color for logo */
+            font-size: 3vw; /* Relative font size */
+        }
+        .background-image {
+            position:absolute; /* Fixed background */
+    top: 0vw;
+    left: 0vw;
+    width: 100%;
+    height: 180%; /* Full screen height */
+    background-image: url('assets/images/group.png'); /* Local image */
+    background-size: cover; /* Cover the whole area */
+    background-position: center center; /* Center the image */
+     /* Keep the image fixed during scrolling */
+    z-index: -1; /* Ensure the background stays behind other content */
+        }
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .menu li {
+            margin-left: 2vw; /* Space between menu items */
+        }
+        .menu a {
+            color: #f0f0f0; /* Light text color */
+            text-decoration: none;
+            font-size: 1.5vw; /* Relative font size */
+            font-weight: 100; /* Lighter weight */
+            position: relative; /* For the underline animation */
+        }
+        .menu ab {
+            color:rgb(206, 49, 49); /* Light text color */
+            text-decoration: none;
+            font-size: 1.5vw; /* Relative font size */
+            font-weight: 100; /* Lighter weight */
+            position: relative; /* For the underline animation */
+        }
+        
+
+        .menu a::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            top: 1.9vw;
+            border-radius: 0px;
+            background-color: #ffffff; /* Dark color for underline */
+            bottom: 0;
+            left: 0;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .3s ease-in-out;
+        }
+        .menu ab::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            top: 1.9vw;
+            border-radius: 0px;
+            background-color: #ffffff; /* Dark color for underline */
+            bottom: 0;
+            left: 0;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .3s ease-in-out;
+        }
+
+        .menu a:hover::before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+        .menu ab:hover::before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        .menu a:hover {
+            color: rgb(206, 49, 49); /* Red on hover */
+            transform: scale(1.2); /* White on hover */
+        }
+        .menu ab:hover {
+            color: rgb(255, 255, 255); /* Red on hover */
+            transform: scale(1.2); /* White on hover */
+        }
+        /* Red border with relative margin */
+        .border-bottom {
+            width: 86%; /* Relative width, 90% of the screen width */
+            height: 0.2vh; /* Red border height as a percentage of viewport height */
+            background-color: #FF1619;
+            margin: 0 auto; /* Center the red border */
+        }
+
+        /* Main heading style */
+        .main-heading {
+            color: white; /* White text */
+            font-size: 4vw; /* Relative font size */
+            text-align: center; /* Centered text */
+            margin-top: 5vh; /* Top margin for spacing */
+            font-family: 'Satoshi', sans-serif; /* Satoshi font */
+            font-weight: 300; /* Light font weight for the heading */
+        }
+
+        /* Heading for "Softwares I work with" */
+        /* Ensure the left rectangle stays on the left, does not affect the other content */
+        .left-image {
+    position: absolute; /* Keeps it in place as you scroll */
+    top: 131vh;  /* Adjust this value to place it vertically where you want */
+    left: 2vw;  /* Adjust this value to place it horizontally */
+    width: 35vw; /* Adjust width to your liking */
+    height: 100.6vh; /* Adjust height to your liking */
+    object-fit: cover; /* Ensures the image fits within the specified dimensions */
+    z-index: -1; /* Keeps the image behind the content */
+    border-radius: 30px;
+}
+
+
+/* Softwares I Work With Heading */
+.software-heading {
+    color: red;
+    font-size: 8vw;
+    text-align: center;
+    margin-top: 5vh;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+.software-heading:hover {
+    color: white; /* Change the color to white on hover */
+    font-size: 8.5vw; /* Increase the font size slightly on hover */
+}
+
+/* Shreya Info Box */
+.Group402515526 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 54%;
+    max-width: 831px;
+    margin: 5vh auto;
+}
+
+.Rectangle4977 {
+            width: 53.5vw;
+            height: 20vw; /* Adjusted height */
+            position: absolute;
+            left: 42vw;
+            top: 60vw;
+            border-radius: 50px;
+            border: 0.10vw solid #FF1619; /* Red border */
+        }
+
+        .HiIMShreyaA3rdYearInteractionDesignStudentBasedInBangaloreIndiaIEnjoyWorkingInMultipleDisciplinesInDesign {
+            width: 48%; /* 90% of the container's width */
+            position: absolute;
+            left: 5%; /* Left margin to create some space */
+            top: 62.5vw;
+            left: 44.8vw;
+            color: white;
+            font-size: 2.7vw; /* Responsive font size */
+            font-family: 'Satoshi', sans-serif;
+            font-weight: 300;
+            word-wrap: break-word;
+        }
+
+
+        .bottom-line {
+    position: absolute; /* Position it absolutely within its container */
+    top: 82.5vw;
+    right: 2vw; /* Align the line to the right side with some margin */
+    width: 57.5%; /* Adjustable width */
+    height: 0.8px; /* Same stroke width as the border */
+    background-color: #FF1619; /* Red color */
+}
+
+
+.spacer {
+    height: 10vh;
+}
+
+.get-in-touch {
+    color: white;
+    font-size: 4.5vw;
+    text-align: right;
+    margin-top: 48vh;
+    margin-right: 9vw;
+    padding-right: 5vw;
+}
+
+.small-rectangles {
+    display: flex;
+    justify-content: right;
+    margin-top: 3vw;
+    margin-right: 0vw;
+}
+
+.small-rect {
+    width: 18%;
+    height: 10vw;
+    border-radius: 40px;
+    border: 1px solid #FF1619;
+    margin-right: 2vw;
+    background-size: 20%; /* Make sure the image covers the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Ensure no tiling */
+}
+.small-rect:hover {
+    transform:scale(1.05);
+    height: 10vw;
+    border-radius: 40px;
+    border: 1px solid #FF1619;
+    margin-right: 2vw;
+    background-size: 20%; /* Make sure the image covers the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Ensure no tiling */
+}
+
+.small-rect:nth-child(1) {
+    background-image: url('path/to/your/image1.jpg'); /* First image */
+}
+
+.small-rect:nth-child(2) {
+    background-image: url('path/to/your/image2.jpg'); /* Second image */
+}
+.small-rect:nth-child(2) img {
+    width: 80%;  /* Makes the image 60% of the rectangle's width */
+    height: auto; /* Keeps the aspect ratio intact */
+    object-fit: cover; /* Ensures the image fills the area without distortion */
+    margin: auto; 
+    margin-left: 6%;
+    margin-top: 17%;
+}
+.small-rect:nth-child(3) img {
+    width: 80%;  /* Makes the image 60% of the rectangle's width */
+    height: auto; /* Keeps the aspect ratio intact */
+    object-fit: cover; /* Ensures the image fills the area without distortion */
+    margin: auto; 
+    margin-left: 6%;
+    margin-top: 14%;
+}
+
+.small-rect:nth-child(3) {
+    background-image: url('path/to/your/image3.jpg'); /* Third image */
+}
+
+.small-rect img {
+    width: 80%;  /* Makes the image 60% of the rectangle's width */
+    height: auto; /* Keeps the aspect ratio intact */
+    object-fit: cover; /* Ensures the image fills the area without distortion */
+    margin: auto; 
+    margin-left: 5%;/* Centers the image */
+}
+
+        /* Add space under the rectangle box */
+        .spacer {
+            height: 10vh; /* Space to separate sections */
+        }
+        .spacer2 {
+            height: 60vh; /* Space to separate sections */
+        }
+
+        /* Styles for the 4 rectangles to form a bigger rectangle */
+        .big-rectangle {
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+}
+
+.rectangle-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5vw;
+}
+
+.top-left-rect, .bottom-left-rect, .top-right-rect, .bottom-right-rect {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Basic animation effect */
+}
+
+.top-left-rect:hover, .bottom-left-rect:hover, .top-right-rect:hover, .bottom-right-rect:hover {
+    transform: scale(1.02); /* Slightly enlarge the rectangle */
+    opacity: 0.9; /* Slightly fade the rectangle */
+}
+
+.image-top-left, .image-bottom-left, .image-top-right, .image-bottom-right {
+    width: 25%;
+    object-fit: cover;
+}
+
+.top-left-rect {
+    background-color: #8B8BFF;
+    width: 46vw;
+    height: 25.5vw;
+}
+
+.bottom-left-rect {
+    background-color: #00A9FF;
+    width: 46vw;
+    height: 25.5vw;
+    margin-top: 1vw;
+}
+
+.top-right-rect {
+    background-color: #2B2A2A;
+    width: 46vw;
+    height: 30.26vw;
+}
+
+.bottom-right-rect {
+    background-color: #FF9A00;
+    width: 46vw;
+    height: 20.8vw;
+    margin-top: 1vw;
+}
+
+        .spacer {
+        height: 5vh; /* Add some space between sections */
+    }
+
+
+    .four-cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Ensure they wrap to the next line if there's not enough space */
+    margin: 5vh auto; /* Margin for spacing */
+    width: 95%; /* Adjust the container width */
+     }
+
+     .Frame123 {
+    flex: 1;
+    max-width: 23.5%;
+    height: 30vw;
+    background: linear-gradient(144deg, #191919 0%, #1F1E1E 100%);
+    border-radius: 9.94px;
+    overflow: hidden;
+    border: 0.86px rgba(255, 255, 255, 0.10) solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0.1vw;
+    transition: all 0.3s ease;
+}
+
+.Frame123:hover {
+    flex: 1;
+    max-width: 24%;
+    height: 32vw;
+    background: linear-gradient(144deg, #FFFFFF 0%, #D3D3D3 100%);
+    border-radius: 9.94px;
+    overflow: hidden;
+    border: 0.86px rgba(255, 255, 255, 0.10) solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0.1vw;
+}
+    
+
+    .Ellipse15 {
+        width: 430.31px;
+        height: 376.27px;
+        position: absolute;
+        left: -31.84px;
+        top: 668.70px;
+        background: linear-gradient(40deg, #FF1619 0%, #FF1619 45%, #FF1619 99%);
+        box-shadow: 132px 132px 132px rgba(0, 0, 0, 0.25);
+        border-radius: 9999px;
+        filter: blur(132.06px);
+    }
+
+    .big-number {
+    font-size: 172.12px;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 900;
+    text-transform: capitalize;
+    line-height: 203.11px;
+    color: rgba(241, 241, 241, 0.11);
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    z-index: 1;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.Frame123:hover .big-number {
+    color: rgba(0, 0, 0, 0.5); /* Dark color for contrast when hovering over the card */
+}
+
+    .Branding {
+        position: absolute;
+        left: 1.4vw;
+        bottom: 0.8vw;
+        color: #F1F1F1;
+        font-size: 2.5vw;
+        font-family: 'Satoshi', sans-serif;
+        font-weight: 900;
+        text-transform: capitalize;
+        line-height: 53.49px;
+        z-index: 2;
+    }
+
+    /* Red Radial Gradient */
+    .red-gradient {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 15vw; /* Adjust the height of the gradient */
+        background: radial-gradient(circle at bottom center, rgba(255, 17, 21, 0.6), transparent 70%);
+        z-index: 0;
+    }
+    .major-projects-heading {
+    font-size: 11.5vw; /* Adjust size as needed */
+    font-family: 'Satoshi', sans-serif;
+    color: #FF1619; /* Red color for the text */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center the text */
+    margin-top: 2vw; /* Add space at the top */
+    margin-bottom: 60vw;
+}
+.image-container {
+    text-align: center;
+    margin-top: 3vh; /* Adjust as needed for spacing */
+}
+
+.center-image {
+    max-width: 100%; /* Adjust to the desired size */
+    height: auto;
+}
+.logo img {
+    height: 50px; /* Adjust the height of the logo */
+    width: auto; /* Maintain aspect ratio */
+}
+.image-text-container {
+    position: relative; /* Allows positioning for the images */
+    margin: 0px;
+    max-width: 100%;
+}
+
+.left-image2 { /* Places the image on the left of the text */
+    position: relative;
+    width: 20vw; /* Adjust as needed */
+    left:1vw;
+}
+
+.text-section {
+    position: relative;
+    text-align: center; /* Center align the text */
+    font-size: 2vw; /* Smaller font size */
+    color: red; /* Set text color to red */
+    line-height: 1.5; /* Adjust line spacing */
+    top: 1vw;
+}
+
+.bottom-right-image {
+    position: absolute;
+    top:24vw;
+    right: 1vw;
+    width: 20vw; /* Adjust size as needed */
+    height: auto;
+    margin-top: 20px; /* Add margin if you want space between the text and image */
+}
+.text-sectionlast{
+
+    position: relative;
+    font-family:'Inter', sans-serif;
+    text-align: center; /* Center align the text */
+    font-size: 2vw; /* Smaller font size */
+    color: rgb(117, 117, 117); /* Set text color to red */
+    line-height: 1.5; /* Adjust line spacing */
+    letter-spacing: -1.9%;
+    top: 1vw;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+
+    <nav>
+        <div class="logo">
+            <img src="assets/images/aankh.png" alt="Your Logo">
+        </div>
+        <ul class="menu">
+            <li><a href="about.html">About Aankh</a></li> <!-- Updated to point to about.html -->
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Services Offered</a></li>
+            <li><a href="#">Contact Me</a></li>
+        </ul>
+    </nav>
+    
+    
+
+    <div class="border-bottom"></div> <!-- Red border -->
+    
+    <!-- Main Heading with Line Break -->
+    <div class="main-heading">
+        Turning Pixels into Art,<br>One Click at a Time.
+    </div>
+
+    <!-- Space before the new heading -->
+    <div style="height: 50vh;"></div> <!-- This creates space between the headings -->
+
+   <!-- Left Rectangle -->
+   <img class="left-image" src="assets/shreya.png" alt="Image Description">
+
+
+<!-- Softwares I Work With Heading -->
+<div class="software-heading">
+    About Me
+</div>
+
+<!-- Shreya Info Box -->
+<div class="Group402515526">
+    <div class="Rectangle4977"></div>
+    <div class="HiIMShreyaA3rdYearInteractionDesignStudentBasedInBangaloreIndiaIEnjoyWorkingInMultipleDisciplinesInDesign">
+        Hi! I’m Shreya, a 3rd year Interaction Design student based in Bangalore, India. I enjoy working in multiple disciplines in design.
+    </div>
+
+    <!-- New red line underneath the rectangle -->
+    
+</div>
+
+<!-- Spacer to add space below the rectangle -->
+<div class="spacer"></div>
+<div class="bottom-line"></div>
+<!-- Get in touch section -->
+<div class="get-in-touch">
+    Get in touch with me!
+</div>
+
+<!-- Small rectangles -->
+<div class="small-rectangles">
+    <div class="small-rect">
+        <img src="assets/images/1.png" alt="Image 1" />
+    </div>
+    <div class="small-rect">
+        <img src="assets/images/2.png" alt="Image 2" />
+    </div>
+    <div class="small-rect">
+        <img src="assets/images/3.png" alt="Image 3" />
+    </div>
+</div>
+
+
+   <!-- New Four Rectangles Section -->
+<div class="big-rectangle">
+    <!-- Left Side Rectangles -->
+    <div class="rectangle-group">
+        <div class="top-left-rect">
+            <img class="image-top-left" src="assets/images/sketchup 1.png" alt="Top Left Image">
+        </div>
+        <div class="bottom-left-rect">
+            <img class="image-bottom-left" src="assets/images/photoshop 1.png" alt="Bottom Left Image">
+        </div>
+    </div>
+    <!-- Right Side Rectangles -->
+    <div class="rectangle-group">
+        <div class="top-right-rect">
+            <img class="image-top-right" src="assets/images/figma 1.png" alt="Top Right Image">
+        </div>
+        <div class="bottom-right-rect">
+            <img class="image-bottom-right" src="assets/images/illustrator 1.png" alt="Bottom Right Image">
+        </div>
+    </div>
+</div>
+<div class="spacer"></div>
+
+
+<!-- Four Cards Section -->
+<div class="four-cards-container">
+    <div class="Frame123">
+        <div class="Ellipse15"></div>
+        <div class="red-gradient"></div> <!-- Added Red Gradient -->
+        <div class="big-number">1</div>
+        <div class="Branding">Branding</div>
+    </div>
+    <div class="Frame123">
+        <div class="Ellipse15"></div>
+        <div class="red-gradient"></div> <!-- Added Red Gradient -->
+        <div class="big-number">2</div>
+        <div class="Branding">Graphic Design</div>
+    </div>
+    <div class="Frame123">
+        <div class="Ellipse15"></div>
+        <div class="red-gradient"></div> <!-- Added Red Gradient -->
+        <div class="big-number">3</div>
+        <div class="Branding">UI Design</div>
+    </div>
+    <div class="Frame123">
+        <div class="Ellipse15"></div>
+        <div class="red-gradient"></div> <!-- Added Red Gradient -->
+        <div class="big-number">4</div>
+        <div class="Branding">Game Design</div>
+    </div>
+</div>
+<div class="spacer"></div>
+<!-- Container for Image, Text, and Bottom-Right Image -->
+<div class="image-text-container">
+    <img src="assets/“.png" class="left-image2" />
+    
+    <div class="text-section">
+        "I’m always down to talk about cats (especially <br> orange ones),
+        the existential dread of our existence,<br> 
+        and how laughter is just a defense mechanism <br> against the void."
+    </div>
+
+    <img src="assets/“2.png" class="bottom-right-image" />
+</div>
+
+</div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer2"></div>
+<div class="text-sectionlast">
+    designed & developed with a lot of tears, by Shreya <3</div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+</body>
+
+</html>
